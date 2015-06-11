@@ -1,5 +1,5 @@
 # Neos.EntityLink
-Easy liking directly to entities from inline editing or inspector editors
+Easy linking directly to entities from inline editing or inspector editors
 
 ## Inline editing
 
@@ -7,17 +7,18 @@ Settings.yaml:
 ```yaml
 ByTorsten:
   Neos:
-    entities:
-      news:
-        className: 'Acme\Demo\Domain\Model\News'
-        searchProperties: ['title', 'teaser']
-        labelProperty: 'title' # Optional, if not provided the first searchProperty is used
-        icon: 'icon-rss-sign' # Optional
-        plugin:
-          name: 'Acme.Demo:News'
-          identifier: '81951f86-17b1-e9a6-b2cc-dcfebf9b297e' #Optional, if not provided first page node of plugin type is used
-          controllerActions:
-            'Acme\Demo\Controller\StandardController': ['show']
+    EntityLink:
+      entities:
+        news:
+          className: 'Acme\Demo\Domain\Model\News'
+          searchProperties: ['title', 'teaser']
+          labelProperty: 'title' # Optional, if not provided the first searchProperty is used
+          icon: 'icon-rss-sign' # Optional
+          plugin:
+            name: 'Acme.Demo:News'
+            identifier: '81951f86-17b1-e9a6-b2cc-dcfebf9b297e' #Optional, if not provided first page node of plugin type is used
+            controllerActions:
+              'Acme\Demo\Controller\StandardController': ['show']
         
 ```
 
