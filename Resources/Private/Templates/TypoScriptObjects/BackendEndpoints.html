@@ -1,0 +1,20 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:security.ifAccess privilegeTarget="TYPO3.Neos:Backend.GeneralAccess">
+  <link rel="bytorsten-service-inline" type="application/vnd.bytorsten.inline" href="{f:uri.action(action: 'index', controller: 'Service\Inline', package: 'ByTorsten.Neos.EntityLink', absolute: true)}" />
+  <link rel="bytorsten-service-editor" type="application/vnd.bytorsten.editor" href="{f:uri.action(action: 'index', controller: 'Service\Editor', package: 'ByTorsten.Neos.EntityLink', absolute: true)}" />
+
+  <script type="text/javascript">
+    <![CDATA[
+    window.require = {
+      context: 'aloha',
+      shim: {
+        'aloha': {
+          deps: ["]]>{f:uri.resource(package:'ByTorsten.Neos.EntityLink', path:'JavaScript/alohaHook.js')}<![CDATA["]
+        }
+      }
+    };
+
+    ]]>
+  </script>
+</f:security.ifAccess>

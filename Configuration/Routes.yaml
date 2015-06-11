@@ -1,0 +1,56 @@
+# RESTful routes for Entities service
+
+-
+  name: 'Inline :: index'
+  uriPattern: 'neos/bytorsten/service/inline'
+  defaults:
+    '@package':     'ByTorsten.Neos.EntityLink'
+    '@controller':  'Service\Inline'
+    '@action':      'index'
+    '@format':      'html'
+  appendExceedingArguments: TRUE
+  httpMethods: ['GET']
+
+-
+  name: 'Inline :: single entity with controller and action'
+  uriPattern: 'neos/bytorsten/service/inline/{type}/{controller}/{action}/{identifier}'
+  defaults:
+    '@package':     'ByTorsten.Neos.EntityLink'
+    '@controller':  'Service\Inline'
+    '@action':      'show'
+    '@format':      'html'
+  appendExceedingArguments: TRUE
+  httpMethods: ['HEAD', 'GET']
+
+-
+  name: 'Inline :: single entity'
+  uriPattern: 'neos/bytorsten/service/inline/{type}/{identifier}'
+  defaults:
+    '@package':     'ByTorsten.Neos.EntityLink'
+    '@controller':  'Service\Inline'
+    '@action':      'show'
+    '@format':      'html'
+  appendExceedingArguments: TRUE
+  httpMethods: ['HEAD', 'GET']
+
+-
+  name: 'Editor :: index'
+  uriPattern: 'neos/bytorsten/service/editor'
+  defaults:
+    '@package':     'ByTorsten.Neos.EntityLink'
+    '@controller':  'Service\Editor'
+    '@action':      'index'
+    '@format':      'html'
+  appendExceedingArguments: TRUE
+  httpMethods: ['GET']
+
+-
+  name: 'Editor :: single Entity'
+  uriPattern: 'neos/bytorsten/service/editor/{identifier}'
+  defaults:
+    '@package':     'ByTorsten.Neos.EntityLink'
+    '@controller':  'Service\Editor'
+    '@action':      'show'
+    '@format':      'html'
+  appendExceedingArguments: TRUE
+  httpMethods: ['GET']

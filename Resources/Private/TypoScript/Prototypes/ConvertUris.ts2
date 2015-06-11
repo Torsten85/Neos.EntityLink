@@ -1,0 +1,5 @@
+prototype(ByTorsten.Neos.EntityLink:ConvertUris) {
+	@class = 'ByTorsten\\Neos\\EntityLink\\TypoScript\\ConvertUrisImplementation'
+	value = ${value}
+	node = ${node}
+}

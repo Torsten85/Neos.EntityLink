@@ -1,0 +1,5 @@
+prototype(ByTorsten.Neos.EntityLink:ConvertEntity) {
+	@class = 'ByTorsten\\Neos\\EntityLink\\TypoScript\\ConvertEntityImplementation'
+	value = ${value}
+	entityClassName = ${entityClassName}
+}

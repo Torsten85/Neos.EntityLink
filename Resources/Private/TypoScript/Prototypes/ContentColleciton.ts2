@@ -1,0 +1,4 @@
+prototype(TYPO3.Neos:ContentCollection).@cache.entryTags {
+  3 = 'NodeType_TYPO3.Neos:Plugin'
+  4 = 'NodeType_TYPO3.Neos:PluginView'
+}

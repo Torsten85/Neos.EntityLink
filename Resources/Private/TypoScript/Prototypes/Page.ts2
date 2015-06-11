@@ -1,0 +1,4 @@
+prototype(TYPO3.Neos:Page).head.byTorstenBackenEndpoints = TYPO3.TypoScript:Template {
+  @position = 'end 10002'
+  templatePath = 'resource://ByTorsten.Neos.EntityLink/Private/Templates/TypoScriptObjects/BackendEndpoints.html'
+}

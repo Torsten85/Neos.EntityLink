@@ -1,0 +1,21 @@
+privilegeTargets:
+
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+
+    'ByTorsten.Neos.EntityLink:InlineService':
+      matcher: 'method(ByTorsten\Neos\EntityLink\Controller\Service\InlineController->(?<!initialize).*Action())'
+
+    'ByTorsten.Neos.EntityLink:EditorService':
+          matcher: 'method(ByTorsten\Neos\EntityLink\Controller\Service\EditorController->(?<!initialize).*Action())'
+
+roles:
+
+  'TYPO3.Neos:Editor':
+    privileges:
+      -
+        privilegeTarget: 'ByTorsten.Neos.EntityLink:InlineService'
+        permission: GRANT
+
+      -
+        privilegeTarget: 'ByTorsten.Neos.EntityLink:EditorService'
+        permission: GRANT

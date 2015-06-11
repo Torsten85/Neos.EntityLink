@@ -1,0 +1,59 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}<html>
+<head>
+  <title>Entities</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+<div>
+  <h1>Entities</h1>
+  <ul class="entities"><f:for each="{entities}" as="entity">
+    <li>
+      <f:if condition="{entity.icon}">
+        <span class="entity-icon"><i class="{entity.icon}"></i></span>
+      </f:if>
+      <span class="entity-type">{entity.type}</span>:
+      <span class="entity-label">{entity.label}</span>
+      (<span class="entity-identifier">{entity.identifier}</span>)
+    </li></f:for>
+  </ul>
+
+  <f:if condition="{entityInfo}">
+    <h1>Plugin controller actions</h1>
+    <ul class="controller-actions">
+      <f:for each="{entityInfo}" key="entity" as="info">
+
+        <li>
+          <span class="action-entity">{entity}</span>:
+          <ul>
+            <f:for each="{info.controllerActions}" key="controller" as="actions">
+              <li>
+                <span class="action-controller">{controller}</span>
+                <ul>
+                  <f:for each="{actions}" key="action" as="actionInfo">
+                    <li>
+                    <span class="action-label">
+                      <f:if condition="{actionInfo.labelTranslationId}">
+                        <f:then>
+                          <neos:backend.translate id="{actionInfo.labelTranslationId}" value="{actionInfo.label}" package="{info.translationPackage}" />
+                        </f:then>
+                        <f:else>
+                          {actionInfo.label}
+                        </f:else>
+                      </f:if>
+
+                    </span>
+                      (<span class="action-name">{action}</span>)
+                    </li>
+                  </f:for>
+                </ul>
+              </li>
+            </f:for>
+          </ul>
+        </li>
+      </f:for>
+    </ul>
+  </f:if>
+
+</div>
+</body>
+</html>

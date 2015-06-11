@@ -1,0 +1,31 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'ByTorsten.Neos.EntityLink': TRUE
+
+    userInterface:
+      requireJsPathMapping:
+        'ByTorsten.Neos.EntityLink': 'resource://ByTorsten.Neos.EntityLink/Public/JavaScript/'
+
+  Flow:
+
+    persistence:
+      doctrine:
+        eventListeners:
+          'ByTorsten\Neos\EntityLink\Domain\Service\EventListener':
+            events: ['postPersist', 'postRemove', 'postUpdate']
+            listener: 'ByTorsten\Neos\EntityLink\Domain\Service\EventListener'
+
+    security:
+      authentication:
+        providers:
+          Typo3BackendProvider:
+            requestPatterns:
+              controllerObjectName: 'TYPO3\Neos\Controller\.*|TYPO3\Neos\Service\.*|TYPO3\Media\Controller\.*|ByTorsten\Neos\EntityLink\Controller\Service\.*'
+
+
+ByTorsten:
+  Neos:
+    EntityLink:
+      updateObjectPathMapping: TRUE
