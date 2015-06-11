@@ -36,7 +36,7 @@ NodeTypes.yaml:
           editor: 'ByTorsten.Neos.EntityLink/Inspector/Editors/EntityEditor' # ... or EntitiesEditor
           editorOptions:
             icon: 'icon-gift' #optional
-            entityclassName: 'Acme\Demo\Domain\Model\Item'
+            entityClassName: 'Acme\Demo\Domain\Model\Item'
             searchProperties: ['title', 'description']
             labelProperty: 'title' #optional, falls back to first searchProperty        
 ```
